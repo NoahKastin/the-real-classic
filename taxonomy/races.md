@@ -6,13 +6,21 @@ AI training: appearance descriptors, starting attribute bonuses (bearing in mind
 
 ## Design Notes and AI Generation Guidelines
 
-Race design is the visual foundation of the player experience. A player commits to looking at their chosen race for potentially dozens of hours of gameplay; aesthetic appeal and visual distinctiveness matter more than lore consistency or mechanical balance alone.
+### Visual Race Design
+
+Race design is the visual foundation of the player experience. A player commits to looking at the player's chosen race for potentially dozens of hours of gameplay; aesthetic appeal and visual distinctiveness matter more than lore consistency or mechanical balance alone.
 
 Prioritize creating races that players *want to see*. When a race resonates visually—when it looks the way players imagine or hope—they're far more likely to commit to the game itself. This is why Blood Elves spiked Horde participation in The Burning Crusade: suddenly there was a race that looked the way a significant player demographic wanted to look.
 
-Design philosophy: **Let lore and mechanics serve aesthetic appeal, not the reverse.** If a compelling visual design requires lore adjustments or cross-cutting mechanics (a race that doesn't fit the traditional faction split, or one with hybrid capabilities), make those changes. The race players want to play is the race that will keep them engaged.
+As a subset of this, keep an eye out for what level of customization users want to have over each race. For example, in the latest Diablo games, while character customization exists, a handful of presets are shown to make it easy for players to easily begin play, thus showing keeping only a handful of options open may be desired by some players. On the other hand, Final Fantasy XIV's lavish character customization, with about 20 appearance sliders or pickers per race and 100 or so options per slider or picker, serves a different audience that cares far more about character design and consequent roleplay than starting play post-haste. Pay attention to what depth of customization users want in a given race; it's vital to the entry experience.
+
+### Racial Design Philosophy
+
+Core racial design philosophy: **Let lore and mechanics serve aesthetic appeal, not the reverse.** If a compelling visual design requires lore adjustments or cross-cutting mechanics (a race that doesn't fit the traditional faction split, or one with hybrid capabilities), make those changes. The race players want to play is the race that will keep them engaged.
 
 **Dual purpose—playable and NPC**: Races serve both as playable character options and as templates for AI-generated NPC races to populate the world. Generation requests should treat races as archetypes that can spawn variants, not one-to-one character blueprints.
+
+### Deferred or Modification-Only
 
 Races can start with **pre-set reputation** standing toward various factions — this is the actual mechanism tying Race to Faction/PvP alignment in the original Classic, rather than factions being a free-floating system. Relevant once Reputation/Factions and PvP-kill quests (deferred — see story.md's Quest Types, "Deferred or Out of Scope") eventually get built out.
 
@@ -85,22 +93,26 @@ This isn't a hard requirement; Realms targeting immediate PvP play or maximum pl
 
 ### Naga/siren/undine
 - **Appearance:** Graceful but deadly, aquatic, sometimes draconic and serpentine — rooted in Indian folklore but blurring heavily into Western mermaids visually: scales, head protrusions that could read as fins or snake-hoods, long tails instead of legs.
+- **Attribute Deltas:** Entirely absent.
 - **Classes:** Even martial builds keep their distance — polearms or tridents rather than closing in — with most classes leaning toward magic or other ranged tactics, fitting their inhumanly slight build.
 - **Avoid:** Yuan-ti, Sahuagin, Kalamer, Laneshi, Limukin, Satarre, Sethrak, Saurok.
 
 ### Frogmen/fishmen
 - **Appearance:** Little distinction between frogmen and fishmen as a category, especially since WoW's Murlocs blend both. Often (not always) small, hunched, large-headed and grotesque, with fins or other head protrusions and eyes on the side or top of the head.
+- **Attribute Deltas:** Entirely absent.
 - **Classes:** Dark, aquatic, or both at once.
 - **Avoid:** Murlocs, Gorlocs, Grippli, Kuo-toa, Locathah, Nakudama, Jinyu, Ankoans, Grungs.
 
 ### Ogres/half-giants/hobgoblins/ettins
 - **Appearance:** Like humans, but much bigger and usually far more muscular; sometimes multiple heads, sometimes one eye per head. Weight-to-height varies widely — ogres and hobgoblins run heavyset, other types in the category run slenderer.
+- **Attribute Deltas:** Entirely absent.
 - **Classes:** A surprisingly wide and potent variety of unusual magics.
 - **Variants:** One-eyed, if Magnaron, Gronn, or Ogron are requested. Made of stone, if a stone variant is requested (Mogu or Magnaron). Folklore trolls (the bridge-dwelling sort) conform to this entry — unlike WoW/D&D trolls, which fit the Elves entry instead.
 - **Avoid:** Roegadyn, Vrykul, Gronn, Ogron, Drust, Drogbar, Djaradin, Mogu, Mo'arg, Magnaron, Ankylier, Giff.
 
 ### Harpies
 - **Appearance:** Winged, feathered, taloned, often hunched — unless meant to read as angelic, which WoW folds into this same category quite often. Size varies widely.
+- **Attribute Deltas:** Entirely absent.
 - **Classes:** Twisted versions of other races' classes, whether the twist reads as noble, ignoble, or simply scholarly.
 - **Avoid:** Aasimar, Kyrians, Val'kyr (all skew larger and more angelic); Arakkoa, or the D&D progenitor Aarakocra (skews small and hunched instead).
 

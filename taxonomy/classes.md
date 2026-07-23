@@ -47,6 +47,13 @@ Tight armor/weapon restrictions can create friction early in the game:
 
 The restriction creates identity when it *solves a problem* (tank needs heavy armor to survive), not when it *creates one* (player can't use the only upgrade they found).
 
+### Sidebar: Armor Appearance
+
+Like racial appearance, armor appearance can make or break player interest in the game. It's important to both:
+- Make armor that looks appealing to the user, drawing from the user's tone prompt.
+- Allow that armor to be used by the characters who its appeal is central to.
+Making armor that does not appeal to the user or where appealing armor cannot be used by the characters whose appeal it contributes to foils the purpose of having armor visually render.
+
 ## Leveling Progression: Grinding & XP Scaling
 
 Classic assumes **grinding (killing monsters) as the primary leveling mechanism**, with quests secondary. This shapes pacing and content design fundamentally:
