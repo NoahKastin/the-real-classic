@@ -15,7 +15,7 @@ Instead of focusing on how many rooms there are and what items exist within them
 - **Attributes:** Many other AI outputs—including race, class, and gear—rely on an authoritative, canonical set of attributes. The AI will be trained on typical terminology used in attribute definitions. See https://github.com/NoahKastin/cry-with-me/docs/FOUNDING.md for how this was previously done elsewhere.
 - **Races:** Number of races added in the patch, with a prompt box for each defining its (probably stock fantasy) appearance and any starting statistics endowed by being a member of that race. The AI should be trained to avoid copyrighted language, such as using "minotaur" instead of "tauren". Heavily suggested to be only 1 race for creating a Realm in order to make the first zone be a standard racial starting zone for authenticity and initial party cohesion. **Note on starting zones:** New races often get new starting zones, but not always; design choice depends on Realm scope. High-level zones should not be used as starting zones.
 - **Classes:** Number of classes added in the patch ("1" for classless), number of levels added (heavily suggested to be 10 or fewer per patch), when/if Talents are unlocked, anything class-restricted (armor, weapons, resource types, starting attributes, etc.), and any specifics on individual class flavor/abilities/ranks/tree structures. (The AI would be trained on typical World of Warcraft ability effects for grounding, but prepared to accept atypical ones according to the user's whim — and the §Races rule applies here too: ground on mechanical patterns, never reproduce Blizzard proper nouns or lore names. See https://github.com/NoahKastin/cry-with-me/docs/MODEL-LOG.md again.)
-- **Boss mechanics:** If there are any bosses in the zone, they'll likely have unconventional, perhaps grueling boss mechanics defining what the user sees as the "authentic" experience. See https://github.com/NoahKastin/master-dungeon for previous coding of boss mechanics.
+- **Boss mechanics:** If there are any bosses in the zone, they'll likely have unconventional, perhaps grueling boss mechanics defining what the user sees as the "authentic" experience.
 - **Story:** The overarching lore of this patch, which can tie into previous Story prompts.
 - **Factions/reputation:** Suggested not to be used for Realm creation, but helpful to have eventually for PvP and long-term progression.
 - **Professions:** A yes/no toggle, heavily suggested to be turned to "no" for Realm creation. If toggled to "yes", there's then a box for what the Professions make to facilitate "true" long-term progression.
@@ -26,7 +26,7 @@ Finishing with a patch publishes the Realm to a Realm picker like World of Warcr
 
 The following systems are assumed to exist in The Real Classic by default and need not be toggled or prompted for during Realm creation:
 
-### Hearthstones (to be renamed; "Hearthstone" is definitely Microsoft IP — a registered, actively-used trademark, the title of their card game)
+### Hearthstones (to be renamed; "Hearthstone" is a registered, actively-used trademark)
 All characters can bind to an inn or home location (the "Hearthstone" bind point) and teleport back to it after a cooldown (30 minutes by default, out of combat). This is a convenience system allowing characters to return to safe towns or bases without requiring a long run, and serves as a soft reset point for raid/dungeon runs. Hearthstones may be configured per-Realm (cooldown, bind points, whether they can be cast in combat, etc.), but the basic mechanic is assumed.
 
 ### Mail and Trade Systems
@@ -38,7 +38,7 @@ Death in The Real Classic is defined by the Realm's Tone box. Players should spe
 - **Bind stone** — Blizzard's original concept: characters bind to a stone/location (one at a time) and automatically resurrect there on death. No corpse run required; instant resurrection.
 - **Altar resurrection** — A Warcraft legacy feature originally planned for WoW (altars of kings appeared in alpha): characters bind to a specific altar and resurrect there instantly on death. Was removed before WoW beta, but remains conceptually close to bind stones and represents an earlier design pass.
 - **Graveyard with corpse run** — What Classic actually shipped with: characters respawn at the nearest graveyard, then must run to their corpse to resurrect (with durability penalties and resurrection sickness). Encourages risky resurrection-sickness shortcuts vs. corpse runs.
-- **Emerald Dream (to be renamed; "Emerald Dream" is definitely Microsoft IP — Warcraft lore)** — Alternative design: death sends characters to the Emerald Dream realm where they can quest to earn their resurrection instead of instant revival.
+- **Emerald Dream (to be renamed; "Emerald Dream" is Microsoft IP)** — Alternative design: death sends characters to the Emerald Dream realm where they can quest to earn their resurrection instead of instant revival.
 - **Hardcore permadeath** — Later variant: death is permanent; character is deleted.
 
 Players should also specify:
@@ -68,10 +68,9 @@ The Real Classic is assembled from Noah's existing projects. Standing directive 
 - `club-penguin-builder` — the platform skeleton: accounts, Socket.IO multiplayer presence, SQLite persistence, Stripe payments, Phaser+React client, fly.io deploy with auto-stop. Feature-complete and deployed.
 - `cry-with-me` — the AI layer: `server/build.js`/`modify.js`/`rebuild.js` generation verbs, `shared/types.js` ENTRY_TYPES taxonomy format + `shared/schema.js` structured outputs, `server/providers/` model abstraction, `server/meter.js` token/$ metering, and retrieval grounding (retrieval-only won the A/B; the curated pack is opt-in). Author the Realm patch schema as a new ENTRY_TYPES vocabulary in this format so the whole pipeline carries over.
 
-**Design ports only (GDScript/Swift — logic gets rewritten as server-authoritative JS):**
+**Design ports only (GDScript — logic gets rewritten as server-authoritative JS):**
 - `take-a-stab` (Godot 4) — shipped real-time melee combat: enemy chase/attack loop (`zombie.gd` `_physics_process`/`_bite`/`die`), hit geometry, difficulty ramp. (Easy to forget this repo exists — that's why it's listed.)
 - `combo-spell` (Godot) — unit/enemy AI behavior catalog (`docs/behaviors.md`: attack, defend-a-point, encircle, etc.)
-- `master-dungeon` (Swift) — turn-based boss mechanics (see §Boss mechanics above)
 - Aggro radius, pathing, respawn, and XP designs are covered across these three.
 
 **Taxonomy source of truth:** the docs in `taxonomy/` are canonical — statistics + entry types, this project's analogue of the Master 4E source that cry-with-me's `types.js` encoded rather than invented. ENTRY_TYPES gets encoded *from* those docs, and the same docs feed the runtime retrieval corpus (cry-with-me's `corpus/` + `retrieval.js` pattern). Realm Zero is a test fixture (generate-then-freeze; hand-write as fallback), not the taxonomy-defining act.

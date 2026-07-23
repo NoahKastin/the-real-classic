@@ -20,10 +20,11 @@ When designing abilities, mechanics, and progression, these abbreviated terms ap
 ## Structure
 
 - **attributes.md** — Canonical attribute definitions, terminology, and how attributes interrelate
+- **boss-mechanics.md** — Challenge types, enemy behaviors, element combinations, and difficulty scaling rules
 - **classes.md** — Class structure, ability effects, resource types, progression patterns, and copyright-avoidance guidelines
+- **index.md** — This file
 - **races.md** — Appearance descriptors, starting stat bonuses, and copyrighted terms to avoid
 - **story.md** — Quest types, NPC roles, narrative elements, questline/zone structure, and currency conventions
-- **boss-mechanics.md** — Challenge types, enemy behaviors, element combinations, and difficulty scaling rules
 
 ## How This Feeds the AI
 
