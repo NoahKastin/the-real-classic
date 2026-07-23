@@ -60,7 +60,7 @@ This isn't a hard requirement; Realms targeting immediate PvP play or maximum pl
 - **Avoid:** Names/demonyms ending in "-'dorei"; Eladrin, Elezen, Khoravar, Shivarra, Vedalken, Viera; the languages/demonyms Darnassian, Shalassian, Thalassian.
 
 ### Dwarves
-- **Appearance:** Short, broad, muscular, usually bearded — whether females share the beard is an open subject of fan debate.
+- **Appearance:** Short, broad, muscular, usually bearded — whether females share the beard is an open subject of fan debate. Ensure that users' requests are warranted as to whether female dwarves have beards or no beards; not listening to this request may well alienate the users.
 - **Attribute Deltas:** Strength and Stamina +2 (22–25), Intellect and Spirit −1 (19–22), Agility −4 (16–19).
 - **Classes:** The base game's classes don't reflect any of this and are the most average of the lot, largely because dwarven culture/religion is highly fractious; other Warcraft media instead lean hard into ranged, elemental-magic, gryphon-riding, and firearm-heavy classes (fitting a setting roughly on the cusp of an Industrial Revolution). Worth deciding deliberately which version a given Realm follows.
 - **Avoid:** Ironforge, Khaz Modan, Grim Batol, Shadowforge City; being considered Bronzebeard, Wildhammer, Dark Iron, Earthen, or especially Duergar or Baugsmidr.

@@ -64,15 +64,10 @@ Like World of Warcraft before it, all this real-time server usage would cost som
 
 The Real Classic is assembled from Noah's existing projects. Standing directive (2026-07-13): **base the generative AI on cry-with-me — not just its docs, its implementation.**
 
-**Direct code ports (same JS/Vite/Express/fly.io stack):**
-- `club-penguin-builder` — the platform skeleton: accounts, Socket.IO multiplayer presence, SQLite persistence, Stripe payments, Phaser+React client, fly.io deploy with auto-stop. Feature-complete and deployed.
-- `cry-with-me` — the AI layer: `server/build.js`/`modify.js`/`rebuild.js` generation verbs, `shared/types.js` ENTRY_TYPES taxonomy format + `shared/schema.js` structured outputs, `server/providers/` model abstraction, `server/meter.js` token/$ metering, and retrieval grounding (retrieval-only won the A/B; the curated pack is opt-in). Author the Realm patch schema as a new ENTRY_TYPES vocabulary in this format so the whole pipeline carries over.
-
-**Design ports only (GDScript — logic gets rewritten as server-authoritative JS):**
-- `take-a-stab` (Godot 4) — shipped real-time melee combat: enemy chase/attack loop (`zombie.gd` `_physics_process`/`_bite`/`die`), hit geometry, difficulty ramp. (Easy to forget this repo exists — that's why it's listed.)
-- `combo-spell` (Godot) — unit/enemy AI behavior catalog (`docs/behaviors.md`: attack, defend-a-point, encircle, etc.)
-- Aggro radius, pathing, respawn, and XP designs are covered across these three.
+- **JS/Vite/Express/fly.io stack:** `club-penguin-builder` — the platform skeleton: accounts, Socket.IO multiplayer presence, SQLite persistence, Stripe payments, Phaser+React client, fly.io deploy with auto-stop. Feature-complete and deployed.
+- **JS/Vite/Express/fly.io stack:** `cry-with-me` — the AI layer: `server/build.js`/`modify.js`/`rebuild.js` generation verbs, `shared/types.js` ENTRY_TYPES taxonomy format + `shared/schema.js` structured outputs, `server/providers/` model abstraction, `server/meter.js` token/$ metering, and retrieval grounding (retrieval-only won the A/B; the curated pack is opt-in). Author the Realm patch schema as a new ENTRY_TYPES vocabulary in this format so the whole pipeline carries over.
+- **GDScript:** `take-a-stab` (Godot 4) — shipped real-time melee combat, with aggro radius, pathing, respawn, and XP design: enemy chase/attack loop (`zombie.gd` `_physics_process`/`_bite`/`die`), hit geometry, difficulty ramp.
 
 **Taxonomy source of truth:** the docs in `taxonomy/` are canonical — statistics + entry types, this project's analogue of the Master 4E source that cry-with-me's `types.js` encoded rather than invented. ENTRY_TYPES gets encoded *from* those docs, and the same docs feed the runtime retrieval corpus (cry-with-me's `corpus/` + `retrieval.js` pattern). Realm Zero is a test fixture (generate-then-freeze; hand-write as fallback), not the taxonomy-defining act.
 
-**Build order:** scaffold + port cry-with-me plumbing → ENTRY_TYPES from the taxonomy docs → taxonomy docs into the corpus → generate Realm Zero, freeze as fixture → JS combat sim from the design ports → wire the generation verbs.
+**Original planned build order (may be deprecated):** scaffold + port cry-with-me plumbing → ENTRY_TYPES from the taxonomy docs → taxonomy docs into the corpus → generate Realm Zero, freeze as fixture → JS combat sim from the design ports → wire the generation verbs.
