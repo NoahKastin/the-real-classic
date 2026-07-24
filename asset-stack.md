@@ -1,8 +1,4 @@
-Below is a **complete, practical blueprint** for an “asset‑language” that 
-can replace the hard‑coded zombie scene you just saw and allow any user 
-(or game‑designer) to define **arbitrary creatures, props, environments, 
-custom races, etc.** in a way that a small, self‑contained Godot tool can 
-consume and turn into live 3‑D scenes.
+Below is a **complete, practical blueprint** for an “asset‑language” that can allow any user (or game‑designer) to define **arbitrary creatures, props, environments, custom races, etc.** in a way that a small, self‑contained Godot tool can consume and turn into live 3‑D scenes.
 
 ---
 
@@ -30,15 +26,15 @@ if needed. |
 
 ## 2.  Core Data Model
 
-Below is a **compact YAML schema** that already supports everything in the zombie scene, plus the most common primitive shapes and transforms.
+Below is a **compact YAML schema** that already supports everything in the eyeball monster scene, plus the most common primitive shapes and transforms.
 
 ```yaml
 # -------------------------------------------------
 # Asset definition (saved as *.asset.yaml)
 # -------------------------------------------------
-name: "Zombi"
-description: "Classic undead with spikes & teeth."
-tags: ["monster", "zombie"]               # For filtering / game logic
+name: "Guardian"
+description: "Classic floating eyeball monster with spikes & teeth."
+tags: ["monster", "guardian"]               # For filtering / game logic
 
 # ---- 1. Global settings ----
 origin_scale: 1.0                         # Uniform scale of the whole model
@@ -211,19 +207,19 @@ instances (or use `concave_polygon_shape` for static floors).
 
 ## 4. Example: Building a Custom Monster Using This System
 
-Below is a **complete recipe** that starts from scratch and ends up with the zombie‑like creature you originally wanted.
+Below is a **complete recipe** that starts from scratch and ends up with the eyeball monster you originally wanted.
 
 ### 4.1. Asset Specification (YAML)
 
 ```yaml
-# monster_zombie.yaml
+# monster_guardian.yaml
 
-name: "Zombie"
+name: "Guardian"
 body_color: "#8b4513"
 
 parts:
   - type: mesh_instance
-    mesh: "res://models/zombie_body.glb"
+    mesh: "res://models/guardian_body.glb"
     position: [0, 0, 0]
     rotation: [0,0,0]
 
@@ -256,19 +252,19 @@ teeth:
 class_name MonsterLoader
 extends Node
 
-func load_zombie() -> Node3D:
+func load_guardian() -> Node3D:
 	# Load this exact file as plain text, then parse YAML → dict.
-	var yaml_text = FileAccess.get_file_as_string("res://monsters/zombie.yaml")
+	var yaml_text = FileAccess.get_file_as_string("res://monsters/guardian.yaml")
 	var data = YAML.parse(yaml_text)
 	
 	var root = Node3D.new()
-	root.name = "Zombie"
+	root.name = "Guardian"
 	
 	# Body
 	if data.parts[0].type == "mesh_instance":
 		var mi = MeshInstance3D.new()
 		var scene = load(data.parts[0].mesh)
-		mi.set_surface_override_material(0, preload("res://materials/zombie_skin.tres"))
+		mi.set_surface_override_material(0, preload("res://materials/guardian_skin.tres"))
 		root.add_child(mi)
 	
 	# Eyes – use instance nodes (prefabs) for reuse
